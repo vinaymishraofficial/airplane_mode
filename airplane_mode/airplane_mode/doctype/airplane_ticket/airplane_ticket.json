@@ -15,6 +15,12 @@
   "destination_airport",
   "destination_airport_code",
   "amended_from",
+  "section_break_sekw",
+  "add_ons",
+  "section_break_chmz",
+  "flight_price",
+  "column_break_zvzt",
+  "total_amount",
   "flight_details_section",
   "flight",
   "departure_date",
@@ -86,7 +92,7 @@
   {
    "fieldname": "flight_details_section",
    "fieldtype": "Section Break",
-   "label": "Flight Details"
+   "label": "Departure Details"
   },
   {
    "fieldname": "flight",
@@ -110,7 +116,8 @@
   {
    "fieldname": "duration_of_flight",
    "fieldtype": "Duration",
-   "label": "Duration of Flight"
+   "label": "Duration of Flight",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_tewt",
@@ -125,14 +132,43 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Booked\nChecked-In\nBoarded"
+   "options": "Booked\nChecked-In\nBoarded",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_sekw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "add_ons",
+   "fieldtype": "Table",
+   "label": "Add Ons",
+   "options": "Airplane Ticket Add-on Item"
+  },
+  {
+   "fieldname": "section_break_chmz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "flight_price",
+   "fieldtype": "Currency",
+   "label": "Flight Price"
+  },
+  {
+   "fieldname": "column_break_zvzt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-01 14:08:16.665844",
+ "modified": "2025-10-01 15:12:50.164637",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",
@@ -169,5 +205,6 @@
    "color": "Green",
    "title": "Boarded"
   }
- ]
+ ],
+ "track_changes": 1
 }
