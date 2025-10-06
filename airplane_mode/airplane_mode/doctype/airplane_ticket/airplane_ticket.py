@@ -10,7 +10,6 @@ class AirplaneTicket(Document):
         self.remove_duplicate_addons()
         self.calculate_total_amount()
 
-
     def remove_duplicate_addons(self):
         seen = set()                                                        # added a blank set here
         unique_rows = []                                                    # to store unique rows

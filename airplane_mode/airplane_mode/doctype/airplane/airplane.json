@@ -42,7 +42,7 @@
    "link_fieldname": "airplane"
   }
  ],
- "modified": "2025-10-01 17:46:41.372723",
+ "modified": "2025-10-03 12:43:11.031995",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane",
@@ -63,7 +63,9 @@
   }
  ],
  "row_format": "Dynamic",
+ "search_fields": "model,airline",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "model"
 }

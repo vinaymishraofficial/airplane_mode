@@ -5,6 +5,7 @@ app_description = "Assesment Test Application"
 app_email = "vinay.alwar89@gmail.com"
 app_license = "mit"
 
+
 # Apps
 # ------------------
 
