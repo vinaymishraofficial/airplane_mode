@@ -6,16 +6,19 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "headquarters",
   "founding_year",
+  "column_break_lzeq",
   "customer_care_number",
-  "headquarters"
+  "website"
  ],
  "fields": [
   {
    "fieldname": "founding_year",
    "fieldtype": "Int",
    "label": "Founding Year",
-   "non_negative": 1
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "customer_care_number",
@@ -29,6 +32,15 @@
    "fieldtype": "Data",
    "label": "Headquarters",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_lzeq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
   }
  ],
  "grid_page_length": 50,
@@ -39,7 +51,7 @@
    "link_fieldname": "Airline"
   }
  ],
- "modified": "2025-10-01 14:23:39.758481",
+ "modified": "2025-10-27 18:09:12.896347",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airline",

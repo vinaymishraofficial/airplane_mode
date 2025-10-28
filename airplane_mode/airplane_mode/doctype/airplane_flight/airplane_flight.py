@@ -4,9 +4,9 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.website.website_generator import WebsiteGenerator
 
-class AirplaneFlight(Document):
-	pass
-
+class AirplaneFlight(WebsiteGenerator):
+	
 	def on_submit(self):
-		frappe.db.set_value(self.doctype, self.name, 'status', 'Completed')
+		self.status='Completed'

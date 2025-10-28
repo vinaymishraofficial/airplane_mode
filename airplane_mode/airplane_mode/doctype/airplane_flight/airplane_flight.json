@@ -10,6 +10,8 @@
   "airplane",
   "column_break_vcvd",
   "status",
+  "is_published",
+  "route",
   "airport_details_section",
   "source_airport",
   "source_airport_code",
@@ -113,12 +115,23 @@
    "fieldname": "amended_from",
    "fieldtype": "Read Only",
    "label": "amended_from"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "route"
   }
  ],
  "grid_page_length": 50,
- "has_web_view": 0,
- "index_web_pages_for_search": 0,
- "is_published_field": " ",
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "is_submittable": 1,
  "links": [
   {
@@ -126,7 +139,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-10-06 10:25:53.740587",
+ "modified": "2025-10-27 16:06:45.034511",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
@@ -147,7 +160,7 @@
    "write": 1
   }
  ],
- "route": "flights",
+ "route": "route",
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
