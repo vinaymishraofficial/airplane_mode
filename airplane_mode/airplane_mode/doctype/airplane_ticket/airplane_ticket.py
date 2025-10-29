@@ -8,7 +8,6 @@ class AirplaneTicket(Document):
 
     def validate(self):
         self.remove_duplicate_addons()
-        self.calculate_total_amount()
 
     def remove_duplicate_addons(self):
         seen = set()                                                        # added a blank set here
@@ -21,10 +20,10 @@ class AirplaneTicket(Document):
          # replace with only unique rows
         self.set("add_ons", unique_rows)
 
-    def calculate_total_amount(self):
-        """Total Amount = Flight Price + sum of all add-on amounts"""
-        child_row_total_amount = sum([row.amount for row in self.add_ons])
-        self.total_amount = (self.flight_price or 0) + child_row_total_amount
+	# Implement the controller to compute total amount
+    def before_save(self):
+        add_on_amount = sum(add_on.amount for add_on in self.add_ons)
+        self.total_amount = self.flight_price + add_on_amount
 
     def before_insert(self):
         # Generate random seat number
@@ -32,7 +31,16 @@ class AirplaneTicket(Document):
         letter = random.choice(['A', 'B', 'C', 'D', 'E'])  # Random letter
         self.seat = f"{number}{letter}"
 
+        # Perform the validation in airline capacity
+        airplane_flight = self.flight
+        airplane = frappe.get_doc("Airplane Flight", airplane_flight).airplane
+        capacity = frappe.get_doc("Airplane", airplane).capacity
+        total_tickets = frappe.db.count('Airplane Ticket', filters={'flight': airplane_flight})
+        
+        if total_tickets > capacity:
+            frappe.throw(f"The number of tickets for {airplane} exceeds the airplane's capacity: {capacity}.")
+
     def on_submit(self):
         if self.status != "Boarded":
             frappe.throw("Only tickets with status 'Boarded' can be submitted.")
-    
+
