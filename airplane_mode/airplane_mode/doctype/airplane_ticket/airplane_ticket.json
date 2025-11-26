@@ -27,6 +27,7 @@
   "departure_time",
   "column_break_tewt",
   "duration_of_flight",
+  "gate_number",
   "section_break_kuqn",
   "amended_from"
  ],
@@ -159,13 +160,18 @@
    "fieldtype": "Data",
    "label": "Seat",
    "read_only": 1
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-29 16:28:50.508356",
+ "modified": "2025-11-04 17:21:28.407976",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

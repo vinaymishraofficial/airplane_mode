@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "SHTYPE-.###",
+ "creation": "2025-11-04 15:08:56.310977",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "shop_type",
+  "enabled"
+ ],
+ "fields": [
+  {
+   "description": "e.g., Stall, Walk-through, Normal",
+   "fieldname": "shop_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shop Type",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-14 13:26:19.335522",
+ "modified_by": "Administrator",
+ "module": "airport shop management",
+ "name": "Shop Type",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "search_fields": "shop_type",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "shop_type"
+}

@@ -1,0 +1,140 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<style>
+    .shop-layout {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 32px 16px 48px;
+    }
+    .shop-hero {
+        margin-bottom: 32px;
+        text-align: center;
+    }
+    .shop-hero h1 {
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        margin-bottom: 8px;
+    }
+    .shop-meta {
+        color: var(--gray-600, #6b7280);
+        font-size: 0.95rem;
+    }
+    .shop-grid {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: minmax(0, 1fr);
+    }
+    @media (min-width: 900px) {
+        .shop-grid {
+            grid-template-columns: 1.05fr 0.95fr;
+        }
+    }
+    .shop-details {
+        padding: 24px;
+        border: 1px solid var(--border-color, #e5e7eb);
+        border-radius: 14px;
+        background: var(--surface-color, #ffffff);
+    }
+    .shop-details h2 {
+        font-size: 1.25rem;
+        margin-bottom: 16px;
+    }
+    .shop-details dl {
+        margin: 0;
+        display: grid;
+        gap: 12px;
+    }
+    .shop-details dt {
+        font-weight: 600;
+        color: var(--gray-700, #374151);
+    }
+    .shop-details dd {
+        margin: 0;
+        color: var(--gray-600, #6b7280);
+    }
+    .shop-lead {
+        padding: 24px;
+        border-radius: 14px;
+        border: 1px solid var(--border-color, #e5e7eb);
+        background: #f9fafb;
+    }
+    .shop-lead h2 {
+        font-size: 1.25rem;
+        margin-bottom: 16px;
+    }
+    .shop-lead .lead-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 24px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .shop-lead .lead-link:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+    }
+</style>
+
+<div class="shop-layout">
+    <div class="shop-hero">
+        <h1>{{ doc.shop_name or title }}</h1>
+        <p class="shop-meta">
+            {% if doc.shop_type %}{{ doc.shop_type }} • {% endif %}
+            {% if doc.airport %}{{ doc.airport }}{% endif %}
+        </p>
+    </div>
+
+    <div class="shop-grid">
+        <section class="shop-details">
+            <h2>Shop Overview</h2>
+            <dl>
+                {% if doc.shop_number %}
+                    <div>
+                        <dt>Shop Number</dt>
+                        <dd>{{ doc.shop_number }}</dd>
+                    </div>
+                {% endif %}
+                {% if doc.area_sqft %}
+                    <div>
+                        <dt>Area (sqft)</dt>
+                        <dd>{{ doc.area_sqft }}</dd>
+                    </div>
+                {% endif %}
+                {% if doc.airport %}
+                    <div>
+                        <dt>Airport</dt>
+                        <dd>{{ doc.airport }}</dd>
+                    </div>
+                {% endif %}
+                {% if doc.location %}
+                    <div>
+                        <dt>Location</dt>
+                        <dd>{{ doc.location }}</dd>
+                    </div>
+                {% endif %}
+                {% if doc.description %}
+                    <div>
+                        <dt>Description</dt>
+                        <dd>{{ doc.description }}</dd>
+                    </div>
+                {% endif %}
+            </dl>
+        </section>
+
+        <section class="shop-lead">
+            <h2>Interested in this shop?</h2>
+            <a
+                class="lead-link"
+                href="/shop-lead/new?shop={{ doc.name | urlencode }}&shop_type={{ doc.shop_type | urlencode }}">
+                Start enquiry for this shop
+            </a>
+        </section>
+    </div>
+</div>
+{% endblock %}

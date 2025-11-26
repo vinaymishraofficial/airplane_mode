@@ -1,0 +1,57 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-04 14:51:36.434836",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "crew_member",
+  "assigned_role",
+  "duty_start",
+  "duty_end"
+ ],
+ "fields": [
+  {
+   "fieldname": "crew_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crew Member",
+   "options": "Crew Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assigned_role",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Assigned Role"
+  },
+  {
+   "fieldname": "duty_start",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Duty Start"
+  },
+  {
+   "fieldname": "duty_end",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Duty End"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-04 14:53:27.371453",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Flight Crew",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

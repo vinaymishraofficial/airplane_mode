@@ -1,0 +1,42 @@
+<style>
+.shop-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.shop-card:hover {
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.12);
+}
+.shop-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1d4ed8;
+    text-decoration: none;
+    margin-bottom: 4px;
+}
+.shop-card-meta {
+    color: #6b7280;
+    font-size: 0.97rem;
+    margin-bottom: 2px;
+}
+</style>
+
+<div class="shop-card">
+    <a class="shop-card-title" href="/{{ doc.route }}">{{ doc.shop_name }}</a>
+    {% if doc.shop_type %}
+        <div class="shop-card-meta">Type: {{ doc.shop_type }}</div>
+    {% endif %}
+    {% if doc.airport %}
+        <div class="shop-card-meta">Airport: {{ doc.airport }}</div>
+    {% endif %}
+    {% if doc.location %}
+        <div class="shop-card-meta">Location: {{ doc.location }}</div>
+    {% endif %}
+</div>

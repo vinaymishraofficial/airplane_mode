@@ -6,7 +6,18 @@ app_email = "vinay.alwar89@gmail.com"
 app_license = "mit"
 
 
-# Apps
+doc_events = {
+    "Airplane Flight": {
+        "on_update": "airplane_mode.airplane_mode.doctype.airplane_flight.airplane_flight.on_update"
+    }
+}
+
+
+fixtures = [
+    {"dt": "Shop Type"}
+]
+
+# Apps 
 # ------------------
 
 # required_apps = []

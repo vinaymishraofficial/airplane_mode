@@ -18,6 +18,8 @@
   "column_break_rnrr",
   "destination_airport",
   "destination_airport_code",
+  "section_break_chta",
+  "crew",
   "section_break_cuco",
   "time_of_departure",
   "duration",
@@ -126,6 +128,16 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "route"
+  },
+  {
+   "fieldname": "section_break_chta",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "crew",
+   "fieldtype": "Table",
+   "label": "crew",
+   "options": "Flight Crew"
   }
  ],
  "grid_page_length": 50,
@@ -139,7 +151,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2025-10-29 16:27:33.057965",
+ "modified": "2025-11-04 14:54:57.787702",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Flight",
