@@ -1,6 +1,8 @@
 # Copyright (c) 2025, Vinay Mishra and contributors
 # For license information, please see license.txt
 
+import re
+
 import frappe
 from frappe import _
 from frappe.model.document import Document
@@ -10,10 +12,9 @@ from frappe.website.website_generator import WebsiteGenerator
 class AirportShop(WebsiteGenerator):
 	def autoname(self):
 		"""Override route generation to avoid double route prefix."""
-		from frappe.utils import slugify
 		if not self.route and self.shop_name:
 			# Generate route from shop_name only, without parent route prefix
-			self.route = slugify(self.shop_name)
+			self.route = slugify_local(self.shop_name)
 	
 	def before_save(self):
 		# Fix route if it has double prefix
@@ -35,6 +36,16 @@ class AirportShop(WebsiteGenerator):
 			self.contract_expiry = None
 			
 			frappe.msgprint(_("Tenant details and contract expiry have been cleared because the shop is now available."), alert=True)
+
+
+def slugify_local(value: str) -> str:
+	"""Minimal slugify to replace missing frappe.utils.slugify in v15.
+
+	Lowercases, trims, replaces non-alphanumerics with single hyphens.
+	"""
+	value = (value or "").strip().lower()
+	value = re.sub(r"[^a-z0-9]+", "-", value)
+	return value.strip("-")
 
 
 @frappe.whitelist()

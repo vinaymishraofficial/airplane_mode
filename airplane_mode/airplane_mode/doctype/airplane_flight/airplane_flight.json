@@ -18,6 +18,7 @@
   "column_break_rnrr",
   "destination_airport",
   "destination_airport_code",
+  "gate_number",
   "section_break_chta",
   "crew",
   "section_break_cuco",
@@ -103,6 +104,11 @@
    "fieldname": "destination_airport_code",
    "fieldtype": "Data",
    "label": "Destination Airport Code"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   },
   {
    "fieldname": "airport_details_section",
